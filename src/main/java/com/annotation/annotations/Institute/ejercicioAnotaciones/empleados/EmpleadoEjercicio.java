@@ -1,4 +1,4 @@
-package org.iesvdm.ejercicioAnotaciones.empleados;
+package com.annotation.annotations.Institute.ejercicioAnotaciones.empleados;
 
 import java.util.Objects;
 public class EmpleadoEjercicio  {

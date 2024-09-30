@@ -1,5 +1,6 @@
-package org.iesvdm.ejercicioAnotaciones;
+package com.annotation.annotations.Institute.ejercicioAnotaciones;
 
+import com.annotation.annotations.Institute.ejercicioAnotaciones.enumerado.TipoEmpleado;
 import org.iesvdm.ejercicioAnotaciones.annotation.EmpleadoAnnotation;
 import org.iesvdm.ejercicioAnotaciones.empleados.EmpleadoEjercicio;
 

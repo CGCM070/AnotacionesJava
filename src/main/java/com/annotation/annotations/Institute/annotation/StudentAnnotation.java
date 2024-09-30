@@ -1,4 +1,4 @@
-package org.iesvdm.annotations;
+package com.annotation.annotations.Institute.annotation;
 
 
 import java.lang.annotation.*;

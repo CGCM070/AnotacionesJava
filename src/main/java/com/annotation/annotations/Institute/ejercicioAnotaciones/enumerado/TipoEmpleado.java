@@ -1,4 +1,4 @@
-package org.iesvdm.ejercicioAnotaciones;
+package com.annotation.annotations.Institute.ejercicioAnotaciones.enumerado;
 
 public enum TipoEmpleado {
     DIRECTIVO,

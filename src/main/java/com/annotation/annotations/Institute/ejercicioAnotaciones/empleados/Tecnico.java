@@ -1,4 +1,4 @@
-package org.iesvdm.ejercicioAnotaciones.empleados;
+package com.annotation.annotations.Institute.ejercicioAnotaciones.empleados;
 
 public class Tecnico extends Operario {
 public String perfil;

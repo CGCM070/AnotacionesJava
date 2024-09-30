@@ -1,4 +1,4 @@
-package org.iesvdm.annotations.Institute;
+package com.annotation.annotations.Institute.model;
 
 import org.iesvdm.annotations.StudentAnnotation;
 

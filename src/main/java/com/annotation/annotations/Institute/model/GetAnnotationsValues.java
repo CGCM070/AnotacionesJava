@@ -1,5 +1,6 @@
-package org.iesvdm.annotations;
+package com.annotation.annotations.Institute.model;
 
+import com.annotation.annotations.Institute.annotation.StudentAnnotation;
 import org.iesvdm.annotations.Institute.Classroom;
 import org.iesvdm.annotations.Institute.StudentClass;
 

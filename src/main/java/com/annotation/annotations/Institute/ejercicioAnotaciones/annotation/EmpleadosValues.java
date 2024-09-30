@@ -1,4 +1,4 @@
-package org.iesvdm.ejercicioAnotaciones.annotation;
+package com.annotation.annotations.Institute.ejercicioAnotaciones.annotation;
 
 import java.lang.annotation.*;
 @Retention(RetentionPolicy.RUNTIME)
