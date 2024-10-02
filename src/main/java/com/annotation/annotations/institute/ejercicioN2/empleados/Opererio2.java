@@ -16,6 +16,6 @@ public class Opererio2 extends EmpleadoEjercicio2 {
     public String toString() {
         return "Opererio2{" +
                 "codTaller=" + codTaller +
-                '}'+super.toString();
+                "} " ;
     }
 }

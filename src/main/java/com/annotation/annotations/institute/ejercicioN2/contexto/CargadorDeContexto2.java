@@ -70,6 +70,7 @@ public class CargadorDeContexto2 {
             oficial2.setDni(oficialAnnotation.dni());
             oficial2.setCategoria(oficialAnnotation.categoria());
             oficial2.setTelefono(oficialAnnotation.telefono());
+            listaOficial.add(oficial2);
         }
         return listaOficial;
     }

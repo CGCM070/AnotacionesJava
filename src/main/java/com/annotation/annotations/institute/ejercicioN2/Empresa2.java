@@ -38,8 +38,9 @@ public class Empresa2 {
     @Override
     public String toString() {
         return "Empresa2{" +
+                ", nombre Empresa='" + nombre + '\'' +
                 "empleados=" + empleados +
-                ", nombre='" + nombre + '\'' +
+
                 '}';
     }
 }
