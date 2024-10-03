@@ -2,7 +2,7 @@ package com.annotation.annotations.institute.ejercicioN2;
 
 import com.annotation.annotations.institute.ejercicioN2.contexto.CargadorDeContexto2;
 
-public class main {
+public class Main {
     public static void main(String[] args) {
 
         Empresa2 empresa2 = new Empresa2()

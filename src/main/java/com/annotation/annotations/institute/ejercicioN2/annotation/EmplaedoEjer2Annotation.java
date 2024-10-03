@@ -5,14 +5,11 @@ import java.lang.annotation.*;
 
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
-@Documented
-public @interface DirectivoAnnotation {
-//    EmplaedoEjer2Annotation[] value();
+
+public @interface EmplaedoEjer2Annotation {
     String nombre();
     String apellidos();
     String direccion() default "Calle Falsa 123";
     String dni();
     int telefono();
-    int codDespacho();
-
 }
