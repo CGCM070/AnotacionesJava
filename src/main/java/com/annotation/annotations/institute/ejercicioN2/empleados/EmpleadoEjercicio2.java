@@ -9,7 +9,7 @@ public class EmpleadoEjercicio2 {
     private String apellidos;
     private String direccion;
     private String dni;
-    private int telefono;
+    private String telefono;
 
 
     public EmpleadoEjercicio2() {
@@ -51,11 +51,11 @@ public class EmpleadoEjercicio2 {
         return this;
     }
 
-    public int getTelefono() {
+    public String getTelefono() {
         return telefono;
     }
 
-    public EmpleadoEjercicio2 setTelefono(int telefono) {
+    public EmpleadoEjercicio2 setTelefono(String telefono) {
         this.telefono = telefono;
         return this;
     }

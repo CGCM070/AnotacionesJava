@@ -2,6 +2,7 @@ package com.annotation.annotations.institute.ejercicioN2.contexto;
 
 import com.annotation.annotations.institute.ejercicioN2.Empresa2;
 import com.annotation.annotations.institute.ejercicioN2.annotation.DirectivoAnnotation;
+import com.annotation.annotations.institute.ejercicioN2.annotation.EmplaedoEjer2Annotation;
 import com.annotation.annotations.institute.ejercicioN2.annotation.OficialAnnotation;
 import com.annotation.annotations.institute.ejercicioN2.annotation.TecnicoAnnotation;
 import com.annotation.annotations.institute.ejercicioN2.empleados.Directivo2;
@@ -28,58 +29,62 @@ public class CargadorDeContexto2 {
         return Arrays.asList(Empresa2.class.getAnnotationsByType(DirectivoAnnotation.class));
     }
 
-    public List<Directivo2> listaDeDirectivos() {
-        List<Directivo2> listaDirectivo = new ArrayList<>();
-
+    public List<Directivo2> listDirectivos() {
+        List<Directivo2> directivo2List = new ArrayList<>();
         for (DirectivoAnnotation directivoAnnotation : directivoValuesList()) {
-            Directivo2 directivo2 = new Directivo2();
-            directivo2.setNombre(directivoAnnotation.nombre());
-            directivo2.setApellidos(directivoAnnotation.apellidos());
-            directivo2.setDireccion(directivoAnnotation.direccion());
-            directivo2.setDni(directivoAnnotation.dni());
-            directivo2.setCodDespacho(directivoAnnotation.codDespacho());
-            listaDirectivo.add(directivo2);
+            for (EmplaedoEjer2Annotation emplaedoEjer2Annotation : directivoAnnotation.value()) {
+                Directivo2 directivo2 = new Directivo2();
+                directivo2.setNombre(emplaedoEjer2Annotation.nombre());
+                directivo2.setApellidos(emplaedoEjer2Annotation.apellidos());
+                directivo2.setDireccion(emplaedoEjer2Annotation.direccion());
+                directivo2.setDni(emplaedoEjer2Annotation.dni());
+                directivo2.setTelefono(emplaedoEjer2Annotation.telefono());
+                directivo2.setCodDespacho(directivoAnnotation.codDespacho());
+                directivo2List.add(directivo2);
+            }
         }
-        return listaDirectivo;
+        return directivo2List;
     }
 
-    public List<Tecnico2> listaDeTecnicos() {
-        List<Tecnico2> listaTecnico = new ArrayList<>();
-
-        for (TecnicoAnnotation tecnicoAnnotation : tecnicoAnnotationList()) {
-            Tecnico2 tecnico2 = new Tecnico2();
-            tecnico2.setNombre(tecnicoAnnotation.nombre());
-            tecnico2.setApellidos(tecnicoAnnotation.apellidos());
-            tecnico2.setPerfil(tecnicoAnnotation.perfil());
-            tecnico2.setDni(tecnicoAnnotation.dni());
-            tecnico2.setDireccion(tecnicoAnnotation.direccion());
-            tecnico2.setTelefono(tecnicoAnnotation.telefono());
-            listaTecnico.add(tecnico2);
-        }
-        return listaTecnico;
-    }
-
-    public List<Oficial2> listaDeOficiales() {
-
-        List<Oficial2> listaOficial = new ArrayList<>();
+    public List<Oficial2> oficial2List() {
+        List<Oficial2> oficial2List = new ArrayList<>();
         for (OficialAnnotation oficialAnnotation : oficialAnnotaionList()) {
-            Oficial2 oficial2 = new Oficial2();
-            oficial2.setNombre(oficialAnnotation.nombre());
-            oficial2.setApellidos(oficialAnnotation.apellidos());
-            oficial2.setDireccion(oficialAnnotation.direccion());
-            oficial2.setDni(oficialAnnotation.dni());
-            oficial2.setCategoria(oficialAnnotation.categoria());
-            oficial2.setTelefono(oficialAnnotation.telefono());
-            listaOficial.add(oficial2);
+            for (EmplaedoEjer2Annotation emplaedoEjer2Annotation : oficialAnnotation.value()) {
+                Oficial2 oficial2 = new Oficial2();
+                oficial2.setNombre(emplaedoEjer2Annotation.nombre());
+                oficial2.setApellidos(emplaedoEjer2Annotation.apellidos());
+                oficial2.setDireccion(emplaedoEjer2Annotation.direccion());
+                oficial2.setDni(emplaedoEjer2Annotation.dni());
+                oficial2.setTelefono(emplaedoEjer2Annotation.telefono());
+                oficial2.setCategoria(oficialAnnotation.categoria());
+                oficial2List.add(oficial2);
+            }
         }
-        return listaOficial;
+        return oficial2List;
     }
 
-    public List<EmpleadoEjercicio2> cargarEmpresa2() {
+    public List<Tecnico2> tecnico2List() {
+        List<Tecnico2> tecnico2List = new ArrayList<>();
+        for (TecnicoAnnotation tecnicoAnnotation : tecnicoAnnotationList()) {
+            for (EmplaedoEjer2Annotation emplaedoEjer2Annotation : tecnicoAnnotation.value()) {
+                Tecnico2 tecnico2 = new Tecnico2();
+                tecnico2.setNombre(emplaedoEjer2Annotation.nombre());
+                tecnico2.setApellidos(emplaedoEjer2Annotation.apellidos());
+                tecnico2.setDireccion(emplaedoEjer2Annotation.direccion());
+                tecnico2.setDni(emplaedoEjer2Annotation.dni());
+                tecnico2.setTelefono(emplaedoEjer2Annotation.telefono());
+                tecnico2.setPerfil(tecnicoAnnotation.perfil());
+                tecnico2List.add(tecnico2);
+            }
+        }
+        return tecnico2List;
+    }
+
+    public List<EmpleadoEjercicio2> cargarEmpleados2() {
         List<EmpleadoEjercicio2> empleados = new ArrayList<>();
-        empleados.addAll(listaDeDirectivos());
-        empleados.addAll(listaDeOficiales());
-        empleados.addAll(listaDeTecnicos());
+        empleados.addAll(listDirectivos());
+        empleados.addAll(oficial2List());
+        empleados.addAll(tecnico2List());
         return empleados;
     }
 }

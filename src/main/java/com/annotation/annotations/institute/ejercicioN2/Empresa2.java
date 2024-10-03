@@ -1,6 +1,7 @@
 package com.annotation.annotations.institute.ejercicioN2;
 
 import com.annotation.annotations.institute.ejercicioN2.annotation.DirectivoAnnotation;
+import com.annotation.annotations.institute.ejercicioN2.annotation.EmplaedoEjer2Annotation;
 import com.annotation.annotations.institute.ejercicioN2.annotation.OficialAnnotation;
 import com.annotation.annotations.institute.ejercicioN2.annotation.TecnicoAnnotation;
 import com.annotation.annotations.institute.ejercicioN2.empleados.EmpleadoEjercicio2;
@@ -8,9 +9,42 @@ import com.annotation.annotations.institute.ejercicioN2.empleados.EmpleadoEjerci
 import java.util.ArrayList;
 import java.util.List;
 
-@DirectivoAnnotation(nombre = "Cesar", apellidos = "Castillo", dni = "123123X", codDespacho = 2, telefono = 000000)
-@OficialAnnotation(dni = "123123O", apellidos = "apellido1", nombre = "Oficial1", telefono = 7777, categoria = "CAT1")
-@TecnicoAnnotation(nombre = "tecnico", apellidos = "apellido2", direccion = "calle3", dni = "18923Y", telefono = 000, perfil = "Perfil1")
+@DirectivoAnnotation(
+        value = {
+                @EmplaedoEjer2Annotation(
+                        nombre = "directivo1",
+                        apellidos = "apellido1",
+                        direccion = "calle, 123",
+                        dni = "12341X",
+                        telefono = "0000"
+                )
+        },
+        codDespacho = 1234
+)
+@OficialAnnotation(
+        value = {
+                @EmplaedoEjer2Annotation(
+                        nombre = "oficial1",
+                        apellidos = "apellido1",
+                        direccion = "calle, 123",
+                        dni = "12341X",
+                        telefono = "0000"
+                )
+        },
+        categoria = "categoria1"
+)
+@TecnicoAnnotation(
+        value = {
+                @EmplaedoEjer2Annotation(
+                        nombre = "tecnico1",
+                        apellidos = "apellido1",
+                        direccion = "calle, 123",
+                        dni = "12341X",
+                        telefono = "0000"
+                )
+        },
+        perfil = "perfil1"
+)
 public class Empresa2 {
 
     private String nombre;
@@ -40,7 +74,6 @@ public class Empresa2 {
         return "Empresa2{" +
                 ", nombre Empresa='" + nombre + '\'' +
                 "empleados=" + empleados +
-
                 '}';
     }
 }

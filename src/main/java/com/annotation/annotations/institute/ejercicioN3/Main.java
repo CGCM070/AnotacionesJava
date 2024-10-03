@@ -8,9 +8,6 @@ public class Main {
         AgendaSemana agendaSemana = AgendaSemana.builder()
                 .tareas(new CargadorDeContexto().cargarTareas())
                 .build();
-
         System.out.println(agendaSemana);
-
     }
-
 }

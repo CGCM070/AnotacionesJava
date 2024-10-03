@@ -5,14 +5,11 @@ import java.lang.annotation.*;
 
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
+@Repeatable(DirectivoValues.class)
 @Documented
 public @interface DirectivoAnnotation {
-//    EmplaedoEjer2Annotation[] value();
-    String nombre();
-    String apellidos();
-    String direccion() default "Calle Falsa 123";
-    String dni();
-    int telefono();
+    EmplaedoEjer2Annotation[] value();
+
     int codDespacho();
 
 }

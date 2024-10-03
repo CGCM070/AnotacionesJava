@@ -7,7 +7,7 @@ public class Main {
 
         Empresa2 empresa2 = new Empresa2()
                 .setNombre("DSI")
-                .setEmpleados(new CargadorDeContexto2().cargarEmpresa2());
+                .setEmpleados(new CargadorDeContexto2().cargarEmpleados2());
 
         System.out.println(empresa2);
         System.out.println("Agregar + super ToString para ver los detalles de los empleados");

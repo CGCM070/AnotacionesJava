@@ -5,12 +5,10 @@ import java.lang.annotation.*;
 
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
+@Repeatable(TecnicoValues.class)
 @Documented
 public @interface TecnicoAnnotation {
-    String nombre();
-    String apellidos();
-    String direccion() default "Calle Falsa 123";
-    String dni();
-    int telefono();
+    EmplaedoEjer2Annotation[] value();
+
     String perfil();
 }
