@@ -12,12 +12,26 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+
+/**
+ * Clase responsable de cargar el contexto de los empleados basándose en anotaciones.
+ */
 public class CargadorDeContexto {
 
+    /**
+     * Recupera una lista de instancias de EmpleadoAnnotation de la clase Empresa.
+     *
+     * @return una lista de instancias de EmpleadoAnnotation.
+     */
     public static List<EmpleadoAnnotation> valoresDeEmpleadoAnnotation() {
         return Arrays.asList(Empresa.class.getAnnotationsByType(EmpleadoAnnotation.class));
     }
 
+    /**
+     * Carga empleados basándose en las anotaciones presentes en la clase Empresa.
+     *
+     * @return una lista de instancias de EmpleadoEjercicio pobladas con datos de las anotaciones.
+     */
     public List<EmpleadoEjercicio> cargarEmpleados() {
         List<EmpleadoEjercicio> empleados = new ArrayList<>();
 
@@ -33,7 +47,7 @@ public class CargadorDeContexto {
                     directivo.setTelefono(empleadoAnnotation.telefono());
                     directivo.setDireccion(empleadoAnnotation.direccion());
                     empleados.add(directivo);
-                break;
+                    break;
 
 
                 case OPERARIO:

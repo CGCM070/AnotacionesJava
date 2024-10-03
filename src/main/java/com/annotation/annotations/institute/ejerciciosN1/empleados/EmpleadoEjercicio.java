@@ -1,6 +1,13 @@
 package com.annotation.annotations.institute.ejerciciosN1.empleados;
 
 import java.util.Objects;
+/**
+ * EmpleadoEjercicio
+ * clase que representa un empleado
+ * Contiene los atributos comunes para todos los empleados
+ *
+ */
+
 public class EmpleadoEjercicio  {
 
 private String nombre;
