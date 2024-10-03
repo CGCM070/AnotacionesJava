@@ -1,9 +1,6 @@
 package com.annotation.annotations.institute.ejercicioN2;
 
-import com.annotation.annotations.institute.ejercicioN2.annotation.DirectivoAnnotation;
-import com.annotation.annotations.institute.ejercicioN2.annotation.EmplaedoEjer2Annotation;
-import com.annotation.annotations.institute.ejercicioN2.annotation.OficialAnnotation;
-import com.annotation.annotations.institute.ejercicioN2.annotation.TecnicoAnnotation;
+import com.annotation.annotations.institute.ejercicioN2.annotation.*;
 import com.annotation.annotations.institute.ejercicioN2.empleados.EmpleadoEjercicio2;
 
 import java.util.ArrayList;
@@ -31,6 +28,9 @@ import java.util.List;
                         telefono = "0000"
                 )
         },
+        operarioValue = @OperarioAnnotation(
+                codTaller = 1
+        ),
         categoria = "categoria1"
 )
 @TecnicoAnnotation(
@@ -43,6 +43,11 @@ import java.util.List;
                         telefono = "0000"
                 )
         },
+        operarioValue =
+        @OperarioAnnotation(
+                codTaller = 2
+        )
+        ,
         perfil = "perfil1"
 )
 public class Empresa2 {

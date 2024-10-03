@@ -9,6 +9,6 @@ import java.lang.annotation.*;
 @Documented
 public @interface TecnicoAnnotation {
     EmplaedoEjer2Annotation[] value();
-
+    OperarioAnnotation operarioValue();
     String perfil();
 }

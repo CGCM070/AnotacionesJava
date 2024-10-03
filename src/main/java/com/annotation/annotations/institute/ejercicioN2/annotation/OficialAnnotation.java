@@ -8,7 +8,7 @@ import java.lang.annotation.*;
 @Repeatable(OficialValues.class)
 @Documented
 public @interface OficialAnnotation {
-    EmplaedoEjer2Annotation[] value();
-
+    EmplaedoEjer2Annotation [] value();
+    OperarioAnnotation operarioValue();
     String categoria();
 }

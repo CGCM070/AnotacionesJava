@@ -16,6 +16,6 @@ public class Tecnico2  extends Opererio2{
     public String toString() {
         return "Tecnico2{" +
                 "perfil='" + perfil + '\'' +
-                "} " ;
+                "} "+super.toString();
     }
 }

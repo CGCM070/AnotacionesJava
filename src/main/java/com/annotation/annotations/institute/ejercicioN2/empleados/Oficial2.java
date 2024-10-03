@@ -16,6 +16,6 @@ public class Oficial2 extends Opererio2 {
     public String toString() {
         return "Oficial2{" +
                 "categoria='" + categoria + '\'' +
-                "} " ;
+                "} "+super.toString();
     }
 }

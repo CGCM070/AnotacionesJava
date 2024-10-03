@@ -16,19 +16,38 @@ import java.util.List;
 
 public class CargadorDeContexto2 {
 
-
+    /**
+     * Obtiene una lista de anotaciones de tipo TecnicoAnnotation de la clase Empresa2.
+     *
+     * @return una lista de TecnicoAnnotation.
+     */
     public static List<TecnicoAnnotation> tecnicoAnnotationList() {
         return Arrays.asList(Empresa2.class.getAnnotationsByType(TecnicoAnnotation.class));
     }
 
+    /**
+     * Obtiene una lista de anotaciones de tipo OficialAnnotation de la clase Empresa2.
+     *
+     * @return una lista de OficialAnnotation.
+     */
     public static List<OficialAnnotation> oficialAnnotaionList() {
         return Arrays.asList(Empresa2.class.getAnnotationsByType(OficialAnnotation.class));
     }
 
+    /**
+     * Obtiene una lista de anotaciones de tipo DirectivoAnnotation de la clase Empresa2.
+     *
+     * @return una lista de DirectivoAnnotation.
+     */
     public static List<DirectivoAnnotation> directivoValuesList() {
         return Arrays.asList(Empresa2.class.getAnnotationsByType(DirectivoAnnotation.class));
     }
 
+    /**
+     * Carga una lista de objetos Directivo2 a partir de las anotaciones DirectivoAnnotation.
+     *
+     * @return una lista de Directivo2.
+     */
     public List<Directivo2> listDirectivos() {
         List<Directivo2> directivo2List = new ArrayList<>();
         for (DirectivoAnnotation directivoAnnotation : directivoValuesList()) {
@@ -46,6 +65,11 @@ public class CargadorDeContexto2 {
         return directivo2List;
     }
 
+    /**
+     * Carga una lista de objetos Oficial2 a partir de las anotaciones OficialAnnotation.
+     *
+     * @return una lista de Oficial2.
+     */
     public List<Oficial2> oficial2List() {
         List<Oficial2> oficial2List = new ArrayList<>();
         for (OficialAnnotation oficialAnnotation : oficialAnnotaionList()) {
@@ -57,12 +81,18 @@ public class CargadorDeContexto2 {
                 oficial2.setDni(emplaedoEjer2Annotation.dni());
                 oficial2.setTelefono(emplaedoEjer2Annotation.telefono());
                 oficial2.setCategoria(oficialAnnotation.categoria());
+                oficial2.setCodTaller(oficialAnnotation.operarioValue().codTaller());
                 oficial2List.add(oficial2);
             }
         }
         return oficial2List;
     }
 
+    /**
+     * Carga una lista de objetos Tecnico2 a partir de las anotaciones TecnicoAnnotation.
+     *
+     * @return una lista de Tecnico2.
+     */
     public List<Tecnico2> tecnico2List() {
         List<Tecnico2> tecnico2List = new ArrayList<>();
         for (TecnicoAnnotation tecnicoAnnotation : tecnicoAnnotationList()) {
@@ -74,12 +104,18 @@ public class CargadorDeContexto2 {
                 tecnico2.setDni(emplaedoEjer2Annotation.dni());
                 tecnico2.setTelefono(emplaedoEjer2Annotation.telefono());
                 tecnico2.setPerfil(tecnicoAnnotation.perfil());
+                tecnico2.setCodTaller(tecnicoAnnotation.operarioValue().codTaller());
                 tecnico2List.add(tecnico2);
             }
         }
         return tecnico2List;
     }
 
+    /**
+     * Carga una lista de todos los empleados (Directivo2, Oficial2, Tecnico2).
+     *
+     * @return una lista de EmpleadoEjercicio2.
+     */
     public List<EmpleadoEjercicio2> cargarEmpleados2() {
         List<EmpleadoEjercicio2> empleados = new ArrayList<>();
         empleados.addAll(listDirectivos());

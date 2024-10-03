@@ -17,12 +17,13 @@ public class CargadorDeContexto {
     public List<Tarea> cargarTareas() {
         List<Tarea> tareas = new ArrayList<>();
         for (TareaAnnotation tareaAnnotation : tareaAnnotationList()) {
-            Tarea tarea = new Tarea();
-            tarea.setTituloTarea(tareaAnnotation.tituloTarea());
-            tarea.setDescripcion(tareaAnnotation.descripcion());
-            tarea.setDiaDeLaSemana(tareaAnnotation.diaDeLaSemana());
-            tarea.setHora(tareaAnnotation.hora());
-            tareas.add(tarea);
+            Tarea tarea2 = Tarea.builder()
+                    .tituloTarea("Tarea 2")
+                    .descripcion("Descripcion 2")
+                    .diaDeLaSemana("Martes")
+                    .hora("11:00")
+                    .build();
+            tareas.add(tarea2);
         }
         return tareas;
     }

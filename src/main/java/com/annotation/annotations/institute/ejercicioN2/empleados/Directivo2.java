@@ -16,6 +16,6 @@ public class Directivo2  extends  EmpleadoEjercicio2{
     public String toString() {
         return "Directivo2{" +
                 "codDespacho=" + codDespacho +
-                "} " ;
+                "} "+super.toString();
     }
 }
