@@ -4,7 +4,7 @@ import com.annotation.annotations.institute.ejericioN4Lombok.model.Person;
 
 public class Main {
     public static void main(String[] args) {
-
+        // Crea una instancia de Person y establece sus atributos utilizando setters
         Person person = new Person();
         person.setName("Juan");
         person.setLastName("Perez");
@@ -14,6 +14,7 @@ public class Main {
 
         System.out.println("Data : " + person);
 
+        // Crea una instancia de Person utilizando el constructor del patrón Builder
         Person personBuilder = Person.builder()
                 .name("Juan")
                 .lastName("Perez")

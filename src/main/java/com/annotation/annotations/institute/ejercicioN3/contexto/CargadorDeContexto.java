@@ -10,10 +10,20 @@ import java.util.List;
 
 public class CargadorDeContexto {
 
+    /**
+     * Método que retorna una lista de TareaAnnotation.
+     *
+     * @return List<TareaAnnotation>
+     */
     public static List<TareaAnnotation> tareaAnnotationList() {
         return Arrays.asList(AgendaSemana.class.getAnnotation(TareaAnnotation.class));
     }
 
+    /**
+     * Método que retorna una lista de Tareas.
+     *
+     * @return List<Tarea>
+     */
     public List<Tarea> cargarTareas() {
         List<Tarea> tareas = new ArrayList<>();
         for (TareaAnnotation tareaAnnotation : tareaAnnotationList()) {

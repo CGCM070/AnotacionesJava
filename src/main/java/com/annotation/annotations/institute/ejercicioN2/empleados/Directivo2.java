@@ -1,5 +1,7 @@
 package com.annotation.annotations.institute.ejercicioN2.empleados;
-
+/**
+ * La clase Directivo2 extiende de EmpleadoEjercicio2 y representa a un directivo con un código de despacho.
+ */
 public class Directivo2  extends  EmpleadoEjercicio2{
     private int codDespacho;
 

@@ -1,5 +1,12 @@
 package com.annotation.annotations.institute.ejericioN4Lombok.model;
+
 import lombok.*;
+
+
+/**
+ * La clase Person representa a una persona con atributos básicos como nombre, apellido, email, teléfono y DNI.
+ * Utiliza anotaciones de Lombok para generar código  como getters, setters, constructores, y el método toString.
+ */
 
 @Data
 @NoArgsConstructor

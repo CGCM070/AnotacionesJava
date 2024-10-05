@@ -50,6 +50,10 @@ import java.util.List;
         ,
         perfil = "perfil1"
 )
+/**
+ * La clase Empresa2 representa una empresa con diferentes tipos de empleados anotados.
+ * Utiliza varias anotaciones personalizadas para definir directivos, oficiales y técnicos.
+ */
 public class Empresa2 {
 
     private String nombre;
