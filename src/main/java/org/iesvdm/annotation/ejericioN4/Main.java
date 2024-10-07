@@ -4,6 +4,13 @@ import org.iesvdm.annotation.ejericioN4.model.Person;
 
 public class Main {
     public static void main(String[] args) {
+
+        /**
+         *  La anotación @Value para crear una clase inmutable
+         *  Person personImmutable = new Person("Juan", "Perez", ..etc);
+         *  y no se pueden modificar sus atributos una vez creada la instancia
+         */
+
         // Crea una instancia de Person y establece sus atributos utilizando setters
         Person person = new Person();
         person.setName("Juan");
@@ -11,7 +18,6 @@ public class Main {
         person.setEmail("testgmail.com");
         person.setPhone("123456789");
         person.setDni("12345678");
-
         System.out.println("Data : " + person);
 
         // Crea una instancia de Person utilizando el constructor del patrón Builder
@@ -22,7 +28,6 @@ public class Main {
                 .phone("123456789")
                 .dni("12345678")
                 .build();
-
         System.out.println("Builder " + personBuilder);
     }
 }

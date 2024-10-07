@@ -14,10 +14,12 @@ import lombok.*;
 @Builder
 @ToString
 public class Person {
+    @NonNull      // Hacamos que el nombre sea obligatorio
     private String name;
     private String lastName;
     private String email;
     private String phone;
+    @NonNull       // Hacamos que el DNI sea obligatorio
     private String dni;
 
 }
